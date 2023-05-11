@@ -1,0 +1,48 @@
+<%@page import="com.ems.controller.EmployeeController"%>
+<%@page import="com.ems.model.Employee"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Employee</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+<jsp:include page="header.jsp">
+		<jsp:param name="headerId" value="headerId"/>
+</jsp:include>
+	<div class="text-center container-md">
+		<br/>
+		<h1 class="h2 mb-2 fw-normal">Delete Employee</h1>
+		<br/>
+	
+	
+	<form action="deleteEmployee">
+	<div class="mb-3">
+	<label> Employee Id</label>
+	<input type="number" name="empId" min=0  required>
+	</div>
+	<button type="submit" class="btn btn-danger">Delete</button>
+	</form>
+	
+</div>
+<div class="text-center container-md">
+<p class="text-danger">${errMsg}</p>
+<p class="text-success">${deleteSuccessMsg}</p>
+</div>
+
+
+</body>
+</html>
